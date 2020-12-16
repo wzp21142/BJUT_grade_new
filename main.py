@@ -1,8 +1,9 @@
 import datetime
 
-import GetInfo, Login
+from get_info import *
+from login import *
 
-user_info = ('填你的账号', '填你的密码')
+user_info = ('教务系统账号', '教务系统密码')
 base_url = 'https://jwglxt.bjut.edu.cn'
 
 lgn = Login(base_url=base_url)
@@ -16,7 +17,7 @@ totalGrades = 0
 total_gradePoints = 0
 for i in range(datetime.datetime.now().year - int(entryear) + 1):
     tempYear = str(int(entryear) + i)
-    grade = person.get_grade(tempYear, '0')  # 2019年、第1学期(0 or 1 or 2 此处0为全年)
+    grade = person.get_grade(tempYear, '0')  # (0为全年)
     for a in grade.get('course'):
         if a.get('gradePoint') != '':
             totalCredits = totalCredits + float(a.get('credit'))
@@ -26,5 +27,5 @@ for i in range(datetime.datetime.now().year - int(entryear) + 1):
             total_gradePoints = total_gradePoints + float(a.get('credit')) * gradePoint
 weighted_grade = totalGrades / totalCredits
 GPA = total_gradePoints / totalCredits
-print('%.2f' % weighted_grade)
-print('%.2f' % GPA)
+print('加权:%.2f' % weighted_grade)
+print('GPA:%.2f' % GPA)
