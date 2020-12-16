@@ -11,3 +11,7 @@ GPA算法遵循[bjuthelper(野生工大助手)](https://github.com/wangyufeng061
 ##致谢
 本项目提取使用了[@NeroAsmarr](https://github.com/NeroAsmarr) 编写并开源的新版正方系统API,针对BJUT的"教务特色"作了简单的修改,原API主页如下.
 > [正方教务管理系统API](https://neroasmar.top/zfnew/)
+##LICENSE
+MIT License
+
+Copyright (c) 2020 wzp21142
