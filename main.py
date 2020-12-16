@@ -3,6 +3,7 @@ import datetime
 from get_info import *
 from login import *
 
+show_all_grades = False
 user_info = ('教务系统账号', '教务系统密码')
 base_url = 'https://jwglxt.bjut.edu.cn'
 
@@ -19,6 +20,8 @@ for i in range(datetime.datetime.now().year - int(entryear) + 1):
     tempYear = str(int(entryear) + i)
     grade = person.get_grade(tempYear, '0')  # (0为全年)
     for a in grade.get('course'):
+        if show_all_grades:
+            print('课程:',a.get('courseTitle'),'学分:',a.get('credit'),'成绩:',a.get('grade'),'课程性质:',a.get('courseNature'),'课程归属:',a.get('courseAttribution'))
         if a.get('gradePoint') != '':
             totalCredits = totalCredits + float(a.get('credit'))
             totalGrades = totalGrades + float(a.get('credit')) * int(a.get('grade'))
