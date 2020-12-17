@@ -16,6 +16,7 @@ pip install -r requirements.txt
 ## 说明
 
 1)目前实现未考虑双学位/有过挂科课程等情况的处理,使用该脚本可能得出不正确结果.
+
 2)GPA算法遵循[bjuthelper(野生工大助手)](https://github.com/wangyufeng0615/bjuthelper) 的底层算法,但出国时打印成绩单似乎使用的算法与之不一致,请以实际情况为准(也可自行修改代码).
 
 ## 致谢
